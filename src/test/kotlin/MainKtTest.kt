@@ -61,5 +61,32 @@ class MainKtTest {
         )
         assertEquals(50.0, result, 1.0)
     }
+    @Test
+    fun pay_Else() {
+        val typecard = 6
+        val pr = 70000.0
+        val amount = 50.0
+
+        val result = pay(
+            typeCard = typecard,
+            previousRemittance = pr,
+            amount = amount
+        )
+        assertEquals(50.0, result, 1.0)
+    }
+
+    @Test
+    fun pay_Amount() {
+        val typecard = 6
+        val pr = 70000.0
+        val amount = 0.0
+
+        val result = pay(
+            typeCard = typecard,
+            previousRemittance = pr,
+            amount = amount
+        )
+        assertEquals(0.0, result, 1.0)
+    }
 
 }
